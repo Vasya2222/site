@@ -1,0 +1,19 @@
+{% extends 'personal_portfolio/base.html' %}
+
+{% block content %}
+    <hr color="green">
+        <h1>Тема: {{ detail_blog.title }}</h1>
+        <h2>Автор: {{detail_blog.author}}</h2>
+
+        <h2>Фото автора</h2>
+        <img src="{{ detail_blog.image.url }}" alt="" width="100" height="100">
+        <br>
+        {% if detail_blog.email %}
+            <h4>Эл. почта: {{detail_blog.email}}</h4>
+        {% endif %}
+        <h3>Дата создания блога: {{detail_blog.date }}</h3>
+    <hr color="yellow">
+    <h3>Текст</h3>
+        <p>{{detail_blog.text}}</p>
+
+{% endblock %}

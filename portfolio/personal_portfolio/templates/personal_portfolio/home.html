@@ -1,0 +1,21 @@
+{% extends 'personal_portfolio/base.html' %}
+
+{% block content %}
+    {% for project in projects %}
+    <hr color="green">
+        <h1>Тема: {{ project.title }}</h1>
+    <br>
+        <h1>Описание: {{ project.description }}</h1>
+
+    <br>
+    <img src="{{ project.image.url }}" alt="" width="100">
+    <br>
+        {% if project.url %}
+            <a href="{{ project.url }}">Ссылка</a>
+    <br>
+        {% endif %}
+    <hr color="yellow">
+
+
+    {% endfor %}
+{% endblock %}
